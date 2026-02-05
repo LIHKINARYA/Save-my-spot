@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "495169280763",
+    "project_id": "save-my-spot-87b77",
+    "storage_bucket": "save-my-spot-87b77.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495169280763:android:54bdea984b1add1b726e5e",
+        "android_client_info": {
+          "package_name": "com.lihkinarya.savemyspot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIhp5Vk_sOoO2ViA7gOI_cozLAnWFEqJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

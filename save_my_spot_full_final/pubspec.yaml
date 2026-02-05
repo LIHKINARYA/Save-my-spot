@@ -1,0 +1,23 @@
+name: save_my_spot
+description: Save My Spot – Flutter Firebase + Hive
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  firebase_core: ^3.4.0
+  cloud_firestore: ^5.4.2
+
+  geolocator: ^12.0.0
+  url_launcher: ^6.3.0
+
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+flutter:
+  uses-material-design: true
