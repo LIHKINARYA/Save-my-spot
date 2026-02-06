@@ -9,11 +9,13 @@
     ],
     "ios": {
       "supportsTablet": true,
+      "bundleIdentifier": "com.savemyspot.app",
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "Save your current location as a spot."
       }
     },
     "android": {
+      "package": "com.savemyspot.app",
       "permissions": [
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION"

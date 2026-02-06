@@ -6,6 +6,91 @@ A simple Expo React Native app to:
 2. Persist spots on-device.
 3. Open driving directions to any saved spot in Google Maps.
 
+## Publish and use on your phone (quick start)
+
+If you just want this running on your phone with the least setup, use **Expo Go**.
+
+1. Install **Expo Go** on your phone:
+   - Android: Google Play Store
+   - iPhone: App Store
+2. In this project, install dependencies and start the Expo server:
+
+```bash
+npm install
+npx expo start
+```
+
+3. Connect your phone and computer to the same Wi-Fi.
+4. Scan the QR code from the terminal/browser:
+   - Android: scan directly from Expo Go
+   - iPhone: scan with Camera, then open in Expo Go
+
+Your app opens on your phone immediately (development mode).
+
+## Publish a shareable production build
+
+For something you can share/install without keeping your computer running, build with EAS.
+
+### 1) One-time setup
+
+```bash
+npm install -g eas-cli
+eas login
+eas build:configure
+```
+
+### 2) Android installable APK (best for direct phone install)
+
+```bash
+eas build -p android --profile preview
+```
+
+When the build finishes, open the build URL on your phone and install the APK.
+
+### 3) iPhone distribution options
+
+iOS builds require Apple Developer setup.
+
+```bash
+eas build -p ios --profile production
+```
+
+Then distribute through TestFlight/App Store Connect.
+
+## Publish app updates (without rebuilding each time)
+
+After your first install via EAS build, you can ship JS/content updates with EAS Update:
+
+```bash
+eas update --branch production --message "Update app content"
+```
+
+Users with that build installed receive the update over-the-air.
+
+
+## If EAS Android build fails with "Run gradlew"/unknown error
+
+From your screenshot, the build reaches EAS but fails during Gradle. A common cause is missing/invalid app IDs.
+This repo now sets valid IDs in `app.json`:
+
+- `android.package`: `com.savemyspot.app`
+- `ios.bundleIdentifier`: `com.savemyspot.app`
+
+If you already started builds before this fix, run again after pulling latest changes:
+
+```bash
+eas build -p android --profile preview --clear-cache
+```
+
+Also useful while debugging:
+
+```bash
+eas doctor
+npx expo config --type public
+```
+
+If it still fails, open the **Run gradlew** log link shown by EAS and share the first concrete error line (usually starts with `* What went wrong:`).
+
 ## Run locally
 
 ```bash
