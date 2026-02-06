@@ -4,6 +4,7 @@ import {
   Alert,
   FlatList,
   Linking,
+  Platform,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -99,6 +100,11 @@ export default function App() {
     const latLng = `${spot.latitude},${spot.longitude}`;
     const appUrl = `comgooglemaps://?daddr=${latLng}&directionsmode=driving`;
     const webUrl = `https://www.google.com/maps/dir/?api=1&destination=${latLng}&travelmode=driving`;
+
+    if (Platform.OS === 'web') {
+      Linking.openURL(webUrl);
+      return;
+    }
 
     Linking.canOpenURL(appUrl)
       .then((supported) => Linking.openURL(supported ? appUrl : webUrl))
